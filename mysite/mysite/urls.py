@@ -17,9 +17,13 @@ from django.contrib import admin
 from django.urls import path
 # from django.conf.urls import include
 from . import views
+from . import dashboard
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('', include('home.urls')),
     path('', views.index, name='index'),
+    path('dashboard/', dashboard.index, name="dashboard"),
+    path('<int:application_id>/application', dashboard.detail, name='detail'),
 ]

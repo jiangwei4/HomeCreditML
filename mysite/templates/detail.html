@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %} Application {{application.SK_ID_CURR}} {% endblock %}
+
+{% block content%}
+
+    <div>{{ application.SK_ID_CURR }}</div>
+    <div>{{ application.TARGET }}</div>
+    <div>{{ application.NAME_CONTRACT_TYPE }}</div>
+    <div>{{ application.CODE_GENDER }}</div>
+    <div>{{ application.FLAG_OWN_CAR }}</div>
+    <div>{{ application.FLAG_OWN_REALTY }}</div>
+
+
+{% endblock %}

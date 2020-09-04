@@ -1,0 +1,10 @@
+class Application:
+
+
+    def __init__(self, SK_ID_CURR, TARGET, NAME_CONTRACT_TYPE, CODE_GENDER, FLAG_OWN_CAR, FLAG_OWN_REALTY):
+        self.SK_ID_CURR = SK_ID_CURR
+        self.TARGET = TARGET
+        self.NAME_CONTRACT_TYPE = NAME_CONTRACT_TYPE
+        self.CODE_GENDER = CODE_GENDER
+        self.FLAG_OWN_CAR = FLAG_OWN_CAR
+        self.FLAG_OWN_REALTY = FLAG_OWN_REALTY

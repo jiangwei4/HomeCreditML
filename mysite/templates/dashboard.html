@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block content%}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Target</th>
+                <th>Contrat</th>
+                <th>Code Gender</th>
+                <th>flag own car</th>
+                <th>flag own realty</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for application in applications %}
+            <tr>
+                <td>{{ application.SK_ID_CURR }}</td>
+                <td>{{ application.TARGET }}</td>
+                <td>{{ application.NAME_CONTRACT_TYPE }}</td>
+                <td>{{ application.CODE_GENDER }}</td>
+                <td>{{ application.FLAG_OWN_CAR }}</td>
+                <td>{{ application.FLAG_OWN_REALTY }}</td>
+                <td><a class="btn btn-primary" href="/{{application.SK_ID_CURR}}/application">Détails</a></td>
+            </tr>
+        {% endfor %}    
+        </tbody>
+    </table>
+
+{% endblock %}
