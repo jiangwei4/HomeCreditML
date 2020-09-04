@@ -63,7 +63,18 @@ def getApplication(application_id):
                     NAME_CONTRACT_TYPE = row[2],
                     CODE_GENDER = row[3],
                     FLAG_OWN_CAR = row[4],
-                    FLAG_OWN_REALTY = row[5]
+                    FLAG_OWN_REALTY = row[5],
+                    CNT_CHILDREN = row[6],
+                    AMT_INCOME_TOTAL = row[7],
+                    AMT_CREDIT = row[8],
+                    AMT_ANNUITY = row[9],
+                    AMT_GOODS_PRICE = row[10],
+                    NAME_TYPE_SUITE = row[11],
+                    NAME_INCOME_TYPE = row[12],
+                    NAME_EDUCATION_TYPE = row[13],
+                    NAME_FAMILY_STATUS = row[14],
+                    NAME_HOUSING_TYPE = row[15],
+                    REGION_POPULATION_RELATIVE = row[16]
                 )
     return False
 
