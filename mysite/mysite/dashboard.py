@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from pathlib import Path
 from classes.application import Application
-
+from django.core.paginator import Paginator
 
 import csv
 import os
@@ -13,9 +13,14 @@ csv_path =  os.path.join(BASE_DIR, '..', 'home-credit-default-risk', 'applicatio
 
 def index(request):
     applications = getApplicationsList()
+    page_number = request.GET.get('page', 1)
+    p = Paginator(applications, 25)
+    applications = p.page(page_number)
     context = {
-        'applications': applications
+        'applications': applications,
     }
+
+    
     return render(request,'dashboard.html',context)
 
 
@@ -42,8 +47,8 @@ def getApplicationsList():
                 FLAG_OWN_REALTY = row[5]
             )
             applications.append(new_application)
-            if(i >= 19):
-                break
+            #if(i >= 600):
+            #    break
     return applications
 
 def getApplication(application_id):
