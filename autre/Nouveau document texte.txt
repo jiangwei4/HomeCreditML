@@ -1,0 +1,72 @@
+# df.fillna
+(df.isna().sum()/df.shape[0]).sort_values()
+
+df_phone = df.index[df['DAYS_LAST_PHONE_CHANGE'].isna()]
+df_phone
+
+oui = df[df.index == 15709]
+df['DAYS_LAST_PHONE_CHANGE']
+
+
+-----------------------------------------
+
+x=0
+y=0
+
+# test.hist()
+# test.plot()
+# test.size()
+
+# test['TARGET'].columns
+
+# print(test.group.columns)
+
+columns_name = []
+
+for name, group in test:
+   columns_name = group.columns
+
+
+# negatif_test = test[test['TARGET'] != 1]
+# positif_test = test['TARGET'] == 1
+
+
+# test['TARGET'].hist()
+
+test.hist(figsize=(25, 25))
+
+# fig, axs = plt.subplots(ceil(len(columns_name)/4), 4,  figsize=(30, 20))
+# for col in (columns_name):
+#     if(x>=4):
+#         x=0
+#         y+=1
+        
+#     sns.distplot(test[col], label='positif', ax=axs[y,x])
+# #     sns.distplot(positif_test[col], label='positif', ax=axs[y,x])
+# #     sns.distplot(negatif_test[col], label='negatif', ax=axs[y,x])
+#     axs[y,x].legend()
+#     x+=1
+
+
+
+-----------------------------
+
+columns = (data_train.isna().sum()/data_train.shape[0]).sort_values() >0
+columns_index = columns.index[columns.values == True]
+
+
+imputer = KNNImputer(n_neighbors= 1)
+
+impute_with_1 = imputer.fit_transform(data_train['OWN_CAR_AGE'])
+
+
+# pbar = tqdm(total=1)
+# for column in columns_index:
+#     print(data_train[column].head())
+# #     impute_with_1 = imputer.fit_transform(data_train[column])
+#     pbar.update(1/(len(columns_index)))
+# pbar.close()
+# imputer = KNNImputer(n_neighbors= 1)
+# impute_with_1 = imputer.fit_transform(data_train)
+    
+# data_train.head()
