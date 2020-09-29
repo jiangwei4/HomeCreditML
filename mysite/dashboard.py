@@ -9,7 +9,7 @@ import array
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-csv_path =  os.path.join(BASE_DIR, '..', 'home-credit-default-risk', 'application_train.csv')
+csv_path =  os.path.join(BASE_DIR, '', 'home-credit-default-risk', 'application_train.csv')
 
 def index(request):
     applications = getApplicationsList()
