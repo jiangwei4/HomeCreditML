@@ -1,6 +1,7 @@
 /home-credit-default-risk
 /.ipynb_checkpoints
-!/mysite
+/Modeles
 /*/__pycache__
 /*/*/__pycache__
 /*/*/*/__pycache__
+/*/*/*/*/__pycache__
