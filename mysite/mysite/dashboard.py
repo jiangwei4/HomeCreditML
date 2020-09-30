@@ -40,7 +40,7 @@ def getApplicationsList():
         for i,row in enumerate(reader):
             new_application = Application(
                 SK_ID_CURR = row[0],
-                TARGET = row[1],
+                ORGANIZATION_TYPE = row[41],
                 NAME_CONTRACT_TYPE = row[2],
                 CODE_GENDER = row[3],
                 FLAG_OWN_CAR = row[4],
