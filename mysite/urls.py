@@ -25,6 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # path('', include('home.urls')),
     path('', views.index, name='index'),
+    path('create/', views.create, name='create'),
     path('dashboard/', dashboard.index, name="dashboard"),
     path('<int:application_id>/application', dashboard.detail, name='detail'),
     path('prediction/', prediction.index, name="prediction"),
