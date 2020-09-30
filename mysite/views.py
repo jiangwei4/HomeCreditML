@@ -4,7 +4,10 @@ from django.http import HttpResponse
 from datetime import datetime, timedelta, date
 import joblib
 import pandas as pd
+from pathlib import Path
+import os
 
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 def index(request):
     return render(request, 'index.html')
@@ -36,7 +39,7 @@ def prediction_post(request):
     d = datetime.strptime(days_birth, "%m/%d/%Y").date()
     days_birth = d-today
 
-    loaded_model = joblib.load('F:\\wamp64\\www\\api_home_credit\\api_home_credit\\media\\modelRandomForestClassifier')
+    loaded_model = joblib.load(os.path.join(BASE_DIR, '', 'modelRandomForestClassifier', 'modelRandomForestClassifier'))
     val = {'ORGANIZATION_TYPE':[organisation_type],
         'CODE_GENDER':[code_gender],
         'DAYS_BIRTH':[days_birth.days],
@@ -46,7 +49,7 @@ def prediction_post(request):
         'EXT_SOURCE_3':[float(ext_source_3)]}
     val = pd.DataFrame(data=val)
 
-    loaded_pipeline = joblib.load('F:\\wamp64\\www\\api_home_credit\\api_home_credit\\media\\sklearn_pipeline.pkl')
+    loaded_pipeline = joblib.load(os.path.join(BASE_DIR, '', '', 'sklearn_pipeline.pkl'))
     val = loaded_pipeline.transform(val)
     prediction = loaded_model.predict_proba(val)
 

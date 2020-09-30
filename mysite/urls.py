@@ -29,4 +29,5 @@ urlpatterns = [
     path('dashboard/', dashboard.index, name="dashboard"),
     path('<int:application_id>/application', dashboard.detail, name='detail'),
     path('prediction/', views.create, name="prediction"),
+    path('prediction_post/', views.prediction_post, name="prediction_post"),
 ]

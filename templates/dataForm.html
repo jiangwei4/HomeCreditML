@@ -4,7 +4,7 @@
 
     {% load widget_tweaks %}
 
-    <form method="post" novalidate action="/prediction_post">
+    <form method="post" novalidate action="/prediction_post/">
     {% csrf_token %}
 
     {% for hidden_field in form.hidden_fields %}
