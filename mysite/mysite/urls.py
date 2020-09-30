@@ -18,6 +18,7 @@ from django.urls import path
 # from django.conf.urls import include
 from . import views
 from . import dashboard
+from . import prediction
 
 
 urlpatterns = [
@@ -27,4 +28,5 @@ urlpatterns = [
     path('create/', views.create, name='create'),
     path('dashboard/', dashboard.index, name="dashboard"),
     path('<int:application_id>/application', dashboard.detail, name='detail'),
+    path('prediction/', prediction.index, name="prediction"),
 ]
