@@ -10,6 +10,8 @@ def create(request):
     if request.method == 'POST':
         form = DataForm(request.POST)
         if form.is_valid():
+            prediction = form.cleaned_data
+            return HttpResponseRedirect('/prediction_post')
             pass  # does nothing, just trigger the validation
     else:
         form = DataForm()
