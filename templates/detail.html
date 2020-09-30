@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %} Application {{application.SK_ID_CURR}} {% endblock %}
+
+{% block content%}
+
+    <div>SK ID CURR : {{ application.SK_ID_CURR }}</div>
+    <div>TARGET : {{ application.TARGET }}</div>
+    <div>NAME_CONTRACT_TYPE : {{ application.NAME_CONTRACT_TYPE }}</div>
+    <div>CODE_GENDER : {{ application.CODE_GENDER }}</div>
+    <div>FLAG_OWN_CAR : {{ application.FLAG_OWN_CAR }}</div>
+    <div>FLAG_OWN_REALTY : {{ application.FLAG_OWN_REALTY }}</div>
+    <div>CNT_CHILDREN : {{ application.CNT_CHILDREN }}</div>
+    <div>AMT_INCOME_TOTAL : {{ application.AMT_INCOME_TOTAL }}</div>
+    <div>AMT_CREDIT : {{ application.AMT_CREDIT }}</div>
+    <div>AMT_ANNUITY : {{ application.AMT_ANNUITY }}</div>
+    <div>AMT_GOODS_PRICE : {{ application.AMT_GOODS_PRICE }}</div>
+    <div>NAME_TYPE_SUITE : {{ application.NAME_TYPE_SUITE }}</div>
+    <div>NAME_INCOME_TYPE : {{ application.NAME_INCOME_TYPE }}</div>
+    <div>NAME_EDUCATION_TYPE : {{ application.NAME_EDUCATION_TYPE }}</div>
+    <div>NAME_CONTRACT_TYPE : {{ application.NAME_CONTRACT_TYPE }}</div>
+    <div>NAME_FAMILY_STATUS : {{ application.NAME_FAMILY_STATUS }}</div>
+    <div>NAME_HOUSING_TYPE : {{ application.NAME_HOUSING_TYPE }}</div>
+    <div>REGION_POPULATION_RELATIVE : {{ application.REGION_POPULATION_RELATIVE }}</div>
+
+    <button class="btn btn-primary" onclick="javascript:history.back();">Retour</button>
+{% endblock %}

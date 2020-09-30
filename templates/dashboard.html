@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block content%}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Target</th>
+                <th>Contrat</th>
+                <th>Code Gender</th>
+                <th>flag own car</th>
+                <th>flag own realty</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for application in applications %}
+            <tr>
+                <td>{{ application.SK_ID_CURR }}</td>
+                <td>{{ application.TARGET }}</td>
+                <td>{{ application.NAME_CONTRACT_TYPE }}</td>
+                <td>{{ application.CODE_GENDER }}</td>
+                <td>{{ application.FLAG_OWN_CAR }}</td>
+                <td>{{ application.FLAG_OWN_REALTY }}</td>
+                <td><a class="btn btn-primary" href="/{{application.SK_ID_CURR}}/application">Détails</a></td>
+            </tr>
+        {% endfor %}    
+        </tbody>
+    </table>
+
+
+    {% if applications.has_other_pages %}
+    <ul class="pagination">
+      {% if applications.has_previous %}
+        <li><a href="?page={{ applications.previous_page_number }}">&laquo;</a></li>
+      {% else %}
+        <li class="disabled"><span>&laquo;</span></li>
+      {% endif %}
+      {% for i in applications.paginator.page_range %}
+        {% if applications.number == i %}
+          <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span>-</li>
+        {% elif i < 4 %}
+          <li><a href="?page={{ i }}">{{ i }}</a>-</li>
+        {% elif applications.number|add:"1" == i %}
+            <li><a href="?page={{ i }}">{{ i }}</a>-</li>
+        {% elif applications.number|add:"-1" == i %}
+            <li><a href="?page={{ i }}">{{ i }}</a>-</li>
+        {% elif i|add:"4" > applications.paginator.num_pages %}
+            <li><a href="?page={{ i }}">{{ i }}</a>-</li>
+        {% endif %}
+        
+      {% endfor %}
+      {% if applications.has_next %}
+        <li><a href="?page={{ applications.next_page_number }}">&raquo;</a></li>
+      {% else %}
+        <li class="disabled"><span>&raquo;</span></li>
+      {% endif %}
+    </ul>
+  {% endif %}
+{% endblock %}
